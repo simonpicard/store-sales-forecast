@@ -35,7 +35,7 @@ The following information has been provided by the retailer:
 
 The first insight is a correlation matrix.
 
-[image](static/corr.png)
+![image](static/corr.png)
 
 One can see that the weekly sales are positively correlated with the
 anonymized data related to promotions and the type of the week being a
@@ -73,15 +73,15 @@ graphs show that some weekly sales are seasonal, some are irregular,
 some have a trend and some are missing data.
 
 
-[image](static/seasonality.png)
+![image](static/seasonality.png)
 
-[image](static/spikes.png)
+![image](static/spikes.png)
 
 
 
-[image](static/trend.png)
+![image](static/trend.png)
 
-[image](static/nan.png)
+![image](static/nan.png)
 
 
 ## Prediction algorithm
@@ -98,15 +98,15 @@ historical data. For example, adding the sales of last week and the
 variance of the sales over the last month.\
 
 
-[image](static/meta1.png)
+![image](static/meta1.png)
 
-[image](static/meta2.png)
+![image](static/meta2.png)
 
 
 
-[image](static/meta3.png)
+![image](static/meta3.png)
 
-[image](static/meta4.png)
+![image](static/meta4.png)
 
 
 Then, each weekly sales forecast is related to a store and a department,
@@ -125,7 +125,7 @@ A model often used to predict time series is k nearest neighbours
 similar historical pattern within it. The following figure is an example
 of its behaviour.
 
-[image](static/knn.png)
+![image](static/knn.png)
 
 As *knn* is based on Euclidean distance, the features have to be
 normalised. As our data sets is composed of several types of data and
@@ -145,9 +145,9 @@ The following figure shows the prediction for two forecasts (the model
 has been trained with the predicted values):\
 
 
-[image](static/pred1.png)
+![image](static/pred1.png)
 
-[image](static/pred2.png)
+![image](static/pred2.png)
 
 
 There are two possibilities to predict more than a week in advance using
