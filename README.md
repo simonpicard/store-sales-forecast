@@ -35,7 +35,7 @@ The following information has been provided by the retailer:
 
 The first insight is a correlation matrix.
 
-![image](static/corr.png){width="80%"}
+[image](static/corr.png)
 
 One can see that the weekly sales are positively correlated with the
 anonymized data related to promotions and the type of the week being a
@@ -50,16 +50,17 @@ The data sets regroup the weekly sales of different stores from
 different departments. It is thus filled with a collection of time
 series, the following figure presents their statistical features.
 
-                     mean            std          skew      kurtosis
-  ------- --------------- -------------- ------------- -------------
-  count       3323.000000    3283.000000   3323.000000   3323.000000
-  mean       14218.781251    3580.283212      1.552763      5.652568
-  std        20937.641285    5734.016494      1.488211      9.490734
-  min            0.017778       0.000000     -2.403163     -3.000000
-  25%         1027.675174     501.720380      0.449821      0.045974
-  50%         6318.644056    1670.286108      1.173305      1.861484
-  75%        18439.250112    4215.472400      2.311495      7.089246
-  max       182868.039085   74905.807456     10.030234    109.633096
+|     | mean          | std          | skew        | kurtosis    |
+|-------|---------------|--------------|-------------|-------------|
+| count | 3323.000000   | 3283.000000  | 3323.000000 | 3323.000000 |
+| mean  | 14218.781251  | 3580.283212  | 1.552763    | 5.652568    |
+| std   | 20937.641285  | 5734.016494  | 1.488211    | 9.490734    |
+| min   | 0.017778      | 0.000000     | -2.403163   | -3.000000   |
+| 25\%  | 1027.675174   | 501.720380   | 0.449821    | 0.045974    |
+| 50\%  | 6318.644056   | 1670.286108  | 1.173305    | 1.861484    |
+| 75\%  | 18439.250112  | 4215.472400  | 2.311495    | 7.089246    |
+| max   | 182868.039085 | 74905.807456 | 10.030234   | 109.633096  |
+
 
 It can be concluded that there are 3323 different weekly sales to
 forecast and that they are quite heterogeneous.
@@ -71,17 +72,17 @@ the time, each of them is coming from one department of one store. The
 graphs show that some weekly sales are seasonal, some are irregular,
 some have a trend and some are missing data.
 
-::: multicols
-2 ![image](static/seasonality.png){width="\\linewidth"}
 
-![image](static/spikes.png){width="\\linewidth"}
-:::
+[image](static/seasonality.png)
 
-::: multicols
-2 ![image](static/trend.png){width="\\linewidth"}
+[image](static/spikes.png)
 
-![image](static/nan.png){width="\\linewidth"}
-:::
+
+
+[image](static/trend.png)
+
+[image](static/nan.png)
+
 
 ## Prediction algorithm
 
@@ -96,17 +97,17 @@ value, the idea is to add new features to a weekly sales based on its
 historical data. For example, adding the sales of last week and the
 variance of the sales over the last month.\
 
-::: multicols
-2 ![image](static/meta1.png){width="\\linewidth"}
 
-![image](static/meta2.png){width="\\linewidth"}
-:::
+[image](static/meta1.png)
 
-::: multicols
-2 ![image](static/meta3.png){width="\\linewidth"}
+[image](static/meta2.png)
 
-![image](static/meta4.png){width="\\linewidth"}
-:::
+
+
+[image](static/meta3.png)
+
+[image](static/meta4.png)
+
 
 Then, each weekly sales forecast is related to a store and a department,
 those links might have an impact on the forecast, thus they are to be
@@ -124,7 +125,7 @@ A model often used to predict time series is k nearest neighbours
 similar historical pattern within it. The following figure is an example
 of its behaviour.
 
-![image](static/knn.png){width="50%"}
+[image](static/knn.png)
 
 As *knn* is based on Euclidean distance, the features have to be
 normalised. As our data sets is composed of several types of data and
@@ -143,11 +144,11 @@ $MAE = 32.66$\
 The following figure shows the prediction for two forecasts (the model
 has been trained with the predicted values):\
 
-::: multicols
-2 ![image](static/pred1.png){width="\\linewidth"}
 
-![image](static/pred2.png){width="\\linewidth"}
-:::
+[image](static/pred1.png)
+
+[image](static/pred2.png)
+
 
 There are two possibilities to predict more than a week in advance using
 this model. Either, predict one week at the time and recursively include
