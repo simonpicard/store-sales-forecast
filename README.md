@@ -1,5 +1,7 @@
 # store-sales-forecast
 
+A data science assignment I did in 2017.
+
 ## Quickstart
 
 ```
@@ -8,6 +10,8 @@ conda activate sales_forecast
 pip install -r requirements.txt
 jupyter lab Short\ Term\ GBR.ipynb 
 ```
+
+Get the data from https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data and move `./data`.
 
 ## Goal
 
