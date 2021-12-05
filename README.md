@@ -91,11 +91,13 @@ department from each store. As it is a forecasting question, one could
 develop an *ARIMA* model for each department. However, this technique
 would make no use of the other available feature, such as the
 temperature of the week and base the prediction exclusively on
-historical weekly sales.\
+historical weekly sales.
+
 In order to take into account the extra feature and the historical
 value, the idea is to add new features to a weekly sales based on its
 historical data. For example, adding the sales of last week and the
-variance of the sales over the last month.\
+variance of the sales over the last month.
+
 
 
 ![image](static/meta1.png)
@@ -112,37 +114,47 @@ variance of the sales over the last month.\
 Then, each weekly sales forecast is related to a store and a department,
 those links might have an impact on the forecast, thus they are to be
 taken into consideration using dummy values. The same goes for the month
-in which the weekly sales are occurring.\
+in which the weekly sales are occurring.
+
 Once the features are defined, the model creation takes place. An idea
 could be to develop one model for each forecast. However this option
 would hide potentials global trends. Hence, a global model will be
-trained.\
+trained.
+
 The linear regression model is eliminated as the weights it would create
 would be the same for each model although the behaviour of the different
-forecasts are not the same.\
+forecasts are not the same.
+
 A model often used to predict time series is k nearest neighbours
 (*knn*). It predicts the next value of a time series by looking for a
 similar historical pattern within it. The following figure is an example
 of its behaviour.
 
-![image](static/knn.png)
+![image](static/knn.PNG)
 
 As *knn* is based on Euclidean distance, the features have to be
 normalised. As our data sets is composed of several types of data and
-each forecast has its own distribution, it is not trivial.\
+each forecast has its own distribution, it is not trivial.
+
 Thus, decision tree based regression are strong candidates and in
 particular Gradient Boosting Regressor (*GBR)*. In appendix you will
 find a *jupyter notebook* which implements the model and gives
-satisfying result for short-term prediction.\
-Error and accuracy:\
-$RMSE = 2916.13$\
-$MAE = 1391.13$\
-$R^2 = 98\%$\
-Using leave last out (of each time series) cross-validation technique:\
-$RMSE = 2237.20$\
-$MAE = 32.66$\
+satisfying result for short-term prediction.
+
+Error and accuracy:
+
+- RMSE = 2916.13$
+- MAE = 1391.13$
+- R^2 = 98\%$
+
+Using leave last out (of each time series) cross-validation technique:
+
+- RMSE = 2237.20$
+- MAE = 32.66$
+
 The following figure shows the prediction for two forecasts (the model
-has been trained with the predicted values):\
+has been trained with the predicted values):
+
 
 
 ![image](static/pred1.png)
@@ -175,17 +187,20 @@ promotion had an impact on the sales and of what proportion?
 After this *PoC*, a few topics are to be considered to estimate the
 workload. Firstly, how far does the retailer want to forecast? If it is
 a few weeks, then the *GBR* might hold its accuracy. If it is longer,
-then another solution would have to be engineered.\
+then another solution would have to be engineered.
+
 If keeping *GBR* is the solution then it has to be modified to forecast
 longer, currently it only predicts one step ahead. The current model
 should also be improved, mainly though feature selection and
 hyper-parameter optimisation. The extension of the forecast length and
-its optimisation should take no more than two weeks.\
+its optimisation should take no more than two weeks.
+
 Then, the model has to be implemented at the retailer. To do so, it
 required to link the model input with the different retailer's data and
 to integrate the forecast in a dashboard. The actual implementation is
 very dependent on the retailer infrastructure and is thus hard to
-evaluate.\
+evaluate.
+
 If the retailer wants longer forecast prediction then a new solution has
 to be developed. One should look at the availability of more historical
 data to give the model more training. The utilisation of deep learning
