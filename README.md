@@ -2,6 +2,13 @@
 
 ## Quickstart
 
+```
+conda create -n sales_forecast python=3.9  
+conda activate sales_forecast
+pip install -r requirements.txt
+jupyter lab Short\ Term\ GBR.ipynb 
+```
+
 ## Goal
 
 A retailer has approached us because he is unable to get a grip on the sales forecasting of the stores. He believes he has good data quality but he does not know how to leverage this data in order to create a better forecast. He would like both short and long term forecasts.
